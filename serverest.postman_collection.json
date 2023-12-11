@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "008474b6-29e5-41a3-93a0-66478cb2e694",
+		"name": "serverest",
+		"description": "[https://serverest.dev](https://serverest.dev)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30574336"
+	},
+	"item": [
+		{
+			"name": "Geração de Massa de Testes",
+			"item": [
+				{
+					"name": "Dados Usuários",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.globals.set(\"userName\", pm.response.json().results[0].name.first);\r",
+									"pm.globals.set(\"userEmail\", pm.response.json().results[0].email);\r",
+									"pm.globals.set(\"userPassword\", pm.response.json().results[0].login.password);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://randomuser.me/api/",
+							"protocol": "https",
+							"host": [
+								"randomuser",
+								"me"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "data new user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://randomuser.me/api/",
+									"protocol": "https",
+									"host": [
+										"randomuser",
+										"me"
+									],
+									"path": [
+										"api",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 19:44:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a3-97CHGAeU0htsC64RDZLO1wAhwcg\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wOrAl4gh35WQPr4luW8uZB1HPAzcJ925jrBKmFEOyXA7vAh4%2B2SNvlwBFt5MQqJQmWiISC7hiozJF1rBxTltlcWUjgRTiZFNVUVcDqzwyEcA0Wm85IdzY83WUbFMYaF6\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "831706a37d6f4b32-SOD"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"gender\": \"female\",\n            \"name\": {\n                \"title\": \"Ms\",\n                \"first\": \"Guerete\",\n                \"last\": \"Carvalho\"\n            },\n            \"location\": {\n                \"street\": {\n                    \"number\": 92,\n                    \"name\": \"Rua da Saudade\"\n                },\n                \"city\": \"Niterói\",\n                \"state\": \"Maranhão\",\n                \"country\": \"Brazil\",\n                \"postcode\": 72689,\n                \"coordinates\": {\n                    \"latitude\": \"-75.1291\",\n                    \"longitude\": \"70.8074\"\n                },\n                \"timezone\": {\n                    \"offset\": \"+3:00\",\n                    \"description\": \"Baghdad, Riyadh, Moscow, St. Petersburg\"\n                }\n            },\n            \"email\": \"guerete.carvalho@example.com\",\n            \"login\": {\n                \"uuid\": \"62a80395-be61-4f82-8a71-700a90f8fd39\",\n                \"username\": \"bigladybug126\",\n                \"password\": \"jockey\",\n                \"salt\": \"6xe0HjqQ\",\n                \"md5\": \"823b3bfa7caac23d5393bc243ef7aed6\",\n                \"sha1\": \"3bbea10889c870b4ce065bcfd1cd88c60d3c1e1c\",\n                \"sha256\": \"f439363d90e9b418e307f58b8e5c9596619808dbfd3d640527052189a6d9d93d\"\n            },\n            \"dob\": {\n                \"date\": \"1948-02-05T21:31:01.259Z\",\n                \"age\": 75\n            },\n            \"registered\": {\n                \"date\": \"2015-10-01T19:52:04.484Z\",\n                \"age\": 8\n            },\n            \"phone\": \"(09) 5982-5981\",\n            \"cell\": \"(58) 4494-2886\",\n            \"id\": {\n                \"name\": \"CPF\",\n                \"value\": \"342.508.678-85\"\n            },\n            \"picture\": {\n                \"large\": \"https://randomuser.me/api/portraits/women/56.jpg\",\n                \"medium\": \"https://randomuser.me/api/portraits/med/women/56.jpg\",\n                \"thumbnail\": \"https://randomuser.me/api/portraits/thumb/women/56.jpg\"\n            },\n            \"nat\": \"BR\"\n        }\n    ],\n    \"info\": {\n        \"seed\": \"1eaad0236e3c9bbc\",\n        \"results\": 1,\n        \"page\": 1,\n        \"version\": \"1.4\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cadastro de usuário",
+			"item": [
+				{
+					"name": "criar novo usuário",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.globals.unset('schema')\r",
+									"\r",
+									"pm.globals.set('schema', {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"message\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"_id\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"message\",\r",
+									"    \"_id\"\r",
+									"  ]\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar mensagem\", function(){\r",
+									"    pm.expect(pm.response.json().message).to.be.eql(\"Cadastro realizado com sucesso\")\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Capturar id\", function(){\r",
+									"    pm.globals.set(\"userID\",pm.response.json()._id)\r",
+									"})\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get('schema'))).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{userName}}\",\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"{{userPassword}}\",\r\n    \"administrador\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca usuário id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.globals.unset('schema')\r",
+									"\r",
+									"pm.globals.set('schema',{\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"nome\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"email\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"password\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"administrador\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"_id\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"nome\",\r",
+									"    \"email\",\r",
+									"    \"password\",\r",
+									"    \"administrador\",\r",
+									"    \"_id\"\r",
+									"  ]\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get('schema'))).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar id\", function(){\r",
+									"    pm.expect(pm.response.json()._id).to.be.eql(pm.globals.get('userID'))\r",
+									"})\r",
+									"\r",
+									"pm.test(\"validar email\", function(){\r",
+									"    pm.expect(pm.response.json().email).to.be.eql(pm.globals.get('userEmail'))\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar usuário",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.globals.unset('schema')\r",
+									"\r",
+									"pm.globals.set('schema',pm.globals.unset('schema'))\r",
+									"\r",
+									"pm.globals.set('schema', {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"message\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"message\"\r",
+									"  ]\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar mensagem\", function(){\r",
+									"    pm.expect(pm.response.json().message).to.be.eql(\"Registro alterado com sucesso\")\r",
+									"})\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get('schema'))).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{userName}}\",\r\n    \"email\": \"{{userEmail}}\",\r\n    \"password\": \"{{userPassword}}\",\r\n    \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios",
+								"{{userID}}"
+							]
+						},
+						"description": "Validações que podem ser feita\n\n- dados obrigatórios\n- dados não podem estar em branco"
+					},
+					"response": []
+				},
+				{
+					"name": "deletar usuário",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.globals.unset('schema')\r",
+									"\r",
+									"pm.globals.set('schema',pm.globals.unset('schema'))\r",
+									"\r",
+									"pm.globals.set('schema', {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"message\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"message\"\r",
+									"  ]\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar mensagem\", function(){\r",
+									"    pm.expect(pm.response.json().message).to.be.eql(\"Registro excluído com sucesso\")\r",
+									"})\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get('schema'))).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "[https://randomuser.me](https://randomuser.me)"
+		}
+	]
+}
